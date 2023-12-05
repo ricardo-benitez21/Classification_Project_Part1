@@ -1,12 +1,10 @@
 def prep_telco(df):
     '''
     Drops columns, replace empty space values with 0.0 so it can have a value,
-    and changing the values so 'Yes' for rows where 'senior_citizen' is equal to 1,
-    and 'No' for rows where 'senior_citizen' is not equal to 1.
     '''
     df = df.drop(columns = ['payment_type_id','internet_service_type_id','contract_type_id'])
     df.total_charges = df.total_charges.str.replace(' ', '0.0')
-    df.senior_citizen = np.where(df['senior_citizen'] == 1, 'Yes', 'No')
+    
     
     return df
 
