@@ -6,9 +6,6 @@ def prep_telco(df):
     df = df.drop(columns = ['payment_type_id','internet_service_type_id','contract_type_id'])
     df.total_charges = df.total_charges.str.replace(' ', '0.0')
     df['internet_service_type'] = df['internet_service_type'].fillna(value='No Internet Service')
-
-    
-    
     return df
 
 def splitting_data(df, col, seed=123):
