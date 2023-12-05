@@ -1,3 +1,6 @@
+from sklearn.model_selection import train_test_split
+import numpy as np
+
 def prep_telco(df):
     '''
     Drops columns, replace empty space values with 0.0 so it can have a value,
