@@ -1,6 +1,7 @@
 def prep_telco(df):
     '''
     Drops columns, replace empty space values with 0.0 so it can have a value,
+    Filled in null values in internet_service_type
     '''
     df = df.drop(columns = ['payment_type_id','internet_service_type_id','contract_type_id'])
     df.total_charges = df.total_charges.str.replace(' ', '0.0')
