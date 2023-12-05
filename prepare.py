@@ -8,7 +8,7 @@ def prep_telco(df):
     df['internet_service_type'] = df['internet_service_type'].fillna(value='No Internet Service')
     return df
 
-def splitting_data(df, col, seed=123):
+def splitting_data(df, col):
     '''
     Splits a DataFrame into training, validation, and test sets using a two-step process.
     '''
@@ -16,14 +16,14 @@ def splitting_data(df, col, seed=123):
     #first split
     train, validate_test = train_test_split(df,
                      train_size=0.6,
-                     random_state=seed,
+                     random_state=123,
                      stratify=df[col]
                     )
     
     #second split
     validate, test = train_test_split(validate_test,
                                      train_size=0.5,
-                                      random_state=seed,
+                                      random_state=123,
                                       stratify=validate_test[col]
                         
                                      )
