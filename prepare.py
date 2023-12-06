@@ -36,7 +36,7 @@ def splitting_data(df, col):
 
 
     def telco_encoded(train, validate, test):
-    """
+        """
     One-hot (For each unique category in a categorical variable, a new binary column (dummy variable) is created.) encodes categorical columns in the input DataFrames (train, validate, and test),
     excluding specific columns ('customer_id' and 'total_charges') from the encoding process.
 
@@ -51,7 +51,7 @@ def splitting_data(df, col):
     - validate_encoded: Validation dataset with one-hot encoded categorical columns.
     - test_encoded: Test dataset with one-hot encoded categorical columns.
     """
-    encoded_dfs = []
+         encoded_dfs = []
     for df in [train, validate, test]:
         df_encoded = df.copy()
         for col in df.columns:
