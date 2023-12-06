@@ -35,7 +35,7 @@ def splitting_data(df, col):
     return train, validate, test
 
 
-    def telco_encoded(train, validate, test):
+def telco_encoded(train, validate, test):
     """
     One-hot encodes categorical columns in the given DataFrames (train, validate, and test).
 
