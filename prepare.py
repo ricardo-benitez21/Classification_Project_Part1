@@ -5,12 +5,14 @@ def prep_telco(df):
     '''
     Drops columns, replace empty space values with 0.0 so it can have a value,
     Filled in null values in internet_service_type
-    Converted numerical values (1 and 0) in the 'senior_citizen' column into corresponding string labels ('Yes' and 'No').
+    Converted numerical values (1 and 0) in the 'senior_citizen' column into corresponding string labels ('Yes' and 'No')
+    Setting the index using the customer id
     '''
     df = df.drop(columns = ['payment_type_id','internet_service_type_id','contract_type_id'])
     df.total_charges = df.total_charges.str.replace(' ', '0.0')
     df['internet_service_type'] = df['internet_service_type'].fillna(value='No Internet Service')
     df.senior_citizen = np.where(df['senior_citizen'] == 1, 'Yes', 'No')
+    df = df.set_index(['customer_id'])
     return df
 
 def splitting_data(df, col):
