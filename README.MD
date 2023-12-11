@@ -14,7 +14,7 @@ This project will try to find out why some Telco customers are churning.
 
 My hypothesis is that the features below affect whether or not a customer will churn or not :
 
-    * Senior Citizen - Senior citizens (62 and older) tend to stay with a provider since they might not know how to switch to other providers. Non senior citizens, like myself, are always looking for service providers that will give us the best bang for our buck. This can lead to non senior citizens churning.
+    * Senior Citizen - Senior citizens (62 and older) could churn depending on how easy it is to navigate their subscription.
 
     * Dependents - If you have no dependents, then maybe you might not need all the services compared to customers who do have dependents. Customers with dependents might need to pay for more services, for example you might need to get tv streaming on top of the services you are already payng for for your kids so they can watch their programs.
 
