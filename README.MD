@@ -16,30 +16,11 @@ My hypothesis is that the features below affect whether or not a customer will c
 
     * Senior Citizen - Senior citizens (62 and older) tend to stay with a provider since they might not know how to switch to other providers. Non senior citizens, like myself, are always looking for service providers that will give us the best bang for our buck. This can lead to non senior citizens churning.
 
-    * Tenure - The amount of time a customer has been with a provider is important. A short tenure amount can indicate churning.
+    * Dependents - If you have no dependents, then maybe you might not need all the services compared to customers who do have dependents. Customers with dependents might need to pay for more services, for example you might need to get tv streaming on top of the services you are already payng for for your kids so they can watch their programs.
 
     * Monthly Charges - If a customer sees that their monthly charges are high, then that can lead to churn.
 
-    * Contract Type - What type of contract causes customers to churn? 
-
-# The Plan
-
-* Acquire data from MySql 
-
-* Prepare the data
-    * Will be using a prepare.py file to do this
-    * Split the data into train (60%), validate (20%), and test (20%) dataframes
-
-* Explore the data to see if there are other drivers that lead to churning
-    
-
-* Modeling
-    * Use the drivers identified in explore to build predictive models of different types
-    * Use the train and validate data to evaulate models
-    * Choose the best model based on highest accuracy 
-    * Evauluate the best model on test data
-
-* Draw conclusions
+    * Gender (Female) - Do females churn more than males? 
 
 # Data Dictionary
 
@@ -65,6 +46,40 @@ My hypothesis is that the features below affect whether or not a customer will c
 |contract_type| the type of contract a customer has|
 |internet_service_type| the type of internet a customer has|
 |payment_type| how a customer pays
+
+# The Plan
+
+* Acquire data from MySql 
+
+* Prepare the data
+    * Will be using a prepare.py file to do this
+    * Split the data into train (60%), validate (20%), and test (20%) dataframes
+
+* Explore the data to see if there are other drivers that lead to churning
+    
+
+* Modeling
+    * Use the drivers identified in explore to build predictive models of different types
+    * Use the train and validate data to evaulate models
+    * Choose the best model based on highest accuracy 
+    * Evauluate the best model on test data
+
+* Conclusions
+    * In conclusion, this project has helped us gain some valuable knowledge in regards to Telco and their customers. We can now come up with business plans to help reduce churn rates in the future and to also grow the relationships we have with current customers
+
+* Recommendations
+    * For customers who are have high monthly charges, I would recommened providing targeted retention offers, such as discounts or additional services, to incentivize them to stay.
+
+    * For customers who do not have dependents, maybe creating customized offers or promotions that align with the lifestyle of individuals without dependents will encourage them to stay.
+
+    * For customers who are senior citizens, Providing personalized and patient customer support that caters to the specific needs of senior citizens could help reduce the churn of customers who are senior citizens.
+
+* Next Steps
+    * With more time, I could look deeper into monthly charges and check to see what exactly is causing their high charges.
+
+    * Come back to the model and update it with any new findings.
+
+
 
 # Steps to Reproduce
 1) Clone this repo.
