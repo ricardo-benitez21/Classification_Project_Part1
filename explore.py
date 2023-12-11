@@ -8,14 +8,14 @@ def countplot_churn(train):
     '''
     Function that displays a countplot of churned and not churned customers
     '''
-    sns.countplot(data=train, x='churn') 
+    sns.countplot(data=train, x='churn', palette = 'prism') 
 
 
-def countplot_senior_citizen(train):
+def barplot_senior_citizen(train):
     '''
     Function that displays a countplot churned and not churned senior and non senior citizens
     '''
-    sns.countplot(x = 'senior_citizen', hue = 'churn', data = train)
+    sns.barplot(x = 'senior_citizen', y = 'churn', data = train, palette = 'prism')
 
 def chi2_senior_citizen(train):
     '''
@@ -26,32 +26,35 @@ def chi2_senior_citizen(train):
     chi2, p, dof, expected = stats.chi2_contingency(observed)
     print(f'p-value: {p}')
     if p < alpha:
-        print('We can reject our null hypothesis and say that there is a relationship between being a senior citizen or not and a customer churning')
+        print('We can reject our null hypothesis and say that there is a relationship between being a senior citizen and churn')
     else:
-        print('We fail to reject our null hypothesis and say that there is NO relationship between being a senior citizen or not and a customer churning')
+        print('We fail to reject our null hypothesis and say that there is NO relationship between being a senior citizen and churn')
 
 
-def countplot_contract_type(train):
+def countplot_gender(train):
     '''
-    FUnction that displays a countplot between contract type and churn
+    Function that displays a countplot between dependents and churn
     '''
-    sns.countplot(x="contract_type", hue="churn", data=train, palette = 'inferno')
+    sns.countplot(x="gender", hue="churn", data=train, palette = 'prism')
 
-def chi2_contract_type(train):
+def chi2_gender(train):
     '''
     Performs a chi-squared test for independence between contract type and churn.
     '''
-    observed = pd.crosstab(train.contract_type, train.churn)
+    observed = pd.crosstab(train.gender, train.churn)
     alpha = 0.05
     chi2, p, dof, expected = stats.chi2_contingency(observed)
     print(f'p-value: {p}')
     if p < alpha:
-        print('We can reject our null hypothesis and say that there is a relationship between contract type and churn')
+        print('We can reject our null hypothesis and say that there is a relationship between being a female and churn')
     else:
-        print('We fail to reject our null hypothesis and say that there is NO relationship between contract type and churn')
+        print('We fail to reject our null hypothesis and say that there is NO relationship between being a female and churn')
 
 def boxplot_monthly_charges(train):
-    sns.boxplot(data=train, y='monthly_charges', x='churn', palette = 'BuPu')
+    '''
+    Function that creates a boxplot between monthly charges and churn
+    '''
+    sns.boxplot(data=train, y='monthly_charges', x='churn', palette = 'prism')
     plt.title('Do customers that churn pay more per month?')
     plt.show()
 
@@ -66,11 +69,17 @@ def ttest_monthly_charges(train):
         print("We fail to reject the null hypothesis")
 
 def countplot_dependents(train):
+    '''
+    Function that creates a countplot between dependents and churn
+    '''
     sns.countplot(data=train, x='dependents', hue='churn', palette = 'prism')
     plt.title('Does having dependents affect churn')
     plt.show()
 
 def chi2_dependents(train):
+    '''
+    Performs a chi-squared test for independence between dependents and churn.
+    '''
     observed = pd.crosstab(train.contract_type, train.churn)
     alpha = 0.05
     chi2, p, dof, expected = stats.chi2_contingency(observed)
